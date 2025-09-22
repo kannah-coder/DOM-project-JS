@@ -1,0 +1,21 @@
+
+---
+
+## `.gitignore`
+
+```gitignore
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE/project settings
+.vscode/
+.idea/
+*.log
+
+# Ignore node_modules if you ever add npm
+node_modules/
+
+# Ignore build/dist folders
+dist/
+build/
