@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Projects</title>
+    <style>
+         .sub1{
+            border:none;
+            color: white;
+            background-color: black;
+            padding:10px ; 
+            /* or you can use padding.top,buttom,rightleft */
+            font-weight:bold;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-bottom:30px ;
+         }
+         .is-sub{
+            background-color: whitesmoke;
+            color: #000;
+
+         }
+         p{
+             font-family: Arial;
+         }
+    </style>
+</head>
+<body>
+    <p>Youtube subscribe button</p>
+    <button class='sub sub1' onclick="f1();">Subscribe</button>
+    <p >Rock paper scissors</p>
+    <a href="obj_rock.html">click here</a>
+    <p>Amazon shipping calculator </p>
+    <p>Orders under$40=+$10 shipping</p>
+    <p>Orders over $40 =Free shipping</p>
+     
+    <form onsubmit="f();return false;"> 
+        <label for="num"><input id="num" type="number" name="calculate" placeholder="Cost of order" required onkeydown="console.log('typing...');"> <button type="submit"
+         >calculate</button> </label>
+         </form> 
+   
+    <p class="js"> </p>
+    
+
+    <script>
+        function f(){
+            let num1=Number(document.querySelector("#num").value);
+            if(num1!==0){
+                if(num1<40){
+                    num1+=10;
+                    console.log(`10$ shipping`);
+
+                    alert(`your total order including shipping is ${num1}`);
+
+            }
+            else if(num1>=40){
+                console.log(`FREE shipping`);
+                alert(`your total order including shipping is ${num1} FREE shipping bro :))`);
+                 
+            }
+
+            }
+            document.querySelector('.js').innerHTML=`${num1}`; 
+            
+         
+        }
+        let subscribed=false;
+        
+        function f1(){
+            
+            subscribed=!subscribed;
+            if(subscribed){
+                document.querySelector('.sub').innerHTML="Subscribed";
+                document.querySelector('.sub').classList.add('is-sub');
+            }
+            else{
+                document.querySelector('.sub').innerHTML="Subscribe";
+                document.querySelector('.sub').classList.remove('is-sub');
+            }
+            
+
+
+
+        }
+         
+         
+         
+        
+    </script>
+</body>
+</html>
+
+
